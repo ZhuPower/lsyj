@@ -1,0 +1,140 @@
+@charset "utf-8";
+/* CSS Document */
+/*公共样式*/
+body,ul,ol,li,p,h1,h2,h3,h4,h5,h6,form,fieldset,table,td,img,div,dl,dt,dd,input{margin: 0;padding: 0;}
+body{font-size:12px;font-family:"Microsoft Yahei";}
+img{border: none;}
+li{list-style: none;}
+input,select,textarea{outline: none;}
+textarea{resize: none;}
+a{text-decoration:none;}
+input:-webkit-autofill { 
+-webkit-box-shadow: 0 0 0px 1000px white inset;
+}
+input,select,textarea{font-family:"Microsoft Yahei";} 
+
+
+#layout{overflow: hidden;width: 100%;height: auto; background-size: 100% auto; background-repeat: no-repeat; background-position:center top;background-image: url(http://util.yijiago.com:8097/yiJiaGo/test/inviteFriends/images/bj.png);background-color:  #ea5663;}
+#layout .txtWrap{width: 100%; height: auto; overflow: hidden; text-align: center;}
+#layout .txtWrap img{ height: auto; display: inline-block;}
+
+/* 分享弹窗 */
+#layout #popBackground{position: fixed; width: 100%; height: 100%;left: 0;top:0; background: #000; opacity: 0.6; z-index: 9; display: none;}
+#layout #shareMain{width: 100%; height: auto;position: absolute; left: 0;top:0; z-index: 9; display: none;}
+#layout #shareMain img{width: 100%; height: auto;display: block;}
+
+/* 老用户邀请 */
+#layout .inviteFriends{}
+#layout .inviteFriends .text1{margin-top: 0.368rem;}
+#layout .inviteFriends .text1 img{width: 63.05555%;}
+#layout .inviteFriends .text2{font-size: 0.25rem; color: #fffc00; font-weight: bold; text-shadow:2px 3px 2px #892a17; height: 0.38rem; line-height: 0.38rem;}
+#layout .inviteFriends .text2 span{padding-right: 0.04rem; display: inline-block;vertical-align: top}
+#layout .inviteFriends .text2 img{width: 47.222%;}
+#layout .inviteFriends .yhqWrap{width: 73.472%;margin: 0px auto;position: relative; margin-top: 8%;}
+#layout .inviteFriends .yhqWrap .yhqbj{width: 100%; height: auto; display:block;}
+#layout .inviteFriends .yhqWrap .yhq{width: 69.565%; height: auto; display:block; position: absolute; left: 50%; margin-left: -34.782%; top:34.8%;}
+#layout .inviteFriends .yhqWrap  .prizeMoney{width: auto; position: absolute; top:50%; color: #a9092c;font-size: 0.18rem; right: 55%;}
+#layout .inviteFriends .yhqWrap  .prizeMoney span{font-size: 0.3rem; display: inline-block; margin-top: -0.13rem;}
+#layout .inviteFriends .yhqWrap  .prizeMoney2{width: auto; position: absolute; top:57%; color: #a9092c;font-size: 0.2441rem; right: 55%;}
+#layout .inviteFriends .yhqWrap  .prizeMoney2 span{font-size: 0.405rem; display: inline-block; margin-top: -0.13rem; letter-spacing: -0.04rem; margin-left: -0.06rem;}
+#layout .inviteFriends .yhqWrap  .prizeMoney3{width: auto; position: absolute; top:57%; color: #a9092c;font-size: 0.2441rem; right: 58%;}
+#layout .inviteFriends .yhqWrap  .prizeMoney3 span{font-size: 0.405rem; display: inline-block; margin-top: -0.13rem; letter-spacing: -0.04rem; margin-left: -0.06rem;}
+
+#layout .inviteFriends .yhqWrap .yhq_mj{position: absolute; font-size: 0.1rem; color: #a6022b; height: 0.18rem; line-height: 0.18rem; width: auto; padding: 0px 0.08rem; border-radius: 0.09rem; background: #ffcd00; right: 30%; top:54%;}
+
+#layout .inviteFriends .btnWrap{width: 91.667%; margin: 0px auto; margin-top: 0.2rem;}
+#layout .inviteFriends .btnWrap a{display: block; width: 100%; height: 0.4rem; line-height: 0.4rem; font-size: 0.18rem; font-weight: bold; text-align: center; border-radius: 0.06rem; margin-bottom: 0.1rem;}
+#layout .inviteFriends .btnWrap .invitingNow{background:#ffd529; color: #d3383d; }
+#layout .inviteFriends .btnWrap .faceInviting{background:#fff; color: #95460f;}
+
+#layout .inviteFriends .tabWrap{width: 91.667%; margin: 0px auto; margin-top: 0.22rem; margin-bottom: 0.2rem;}
+#layout .inviteFriends .tabWrap ul{overflow: hidden;}
+#layout .inviteFriends .tabWrap ul li{float: left; color: #682b00; font-size: 0.16rem; background: #fea617; border-radius: 0.1rem 0.1rem 0px 0px; height: 0.35rem; line-height: 0.35rem;text-align: center; width: 39.394%; font-weight: bold;}
+#layout .inviteFriends .tabWrap ul li.cur{background: #fff; color: #95460f;}
+#layout .inviteFriends .tabWrap ul li:first-child{margin-left: 6.818%;}
+#layout .inviteFriends .tabWrap ul li:last-child{margin-left: 7.575%;}
+#layout .inviteFriends .tabWrap #tabCon{background: #fff; border-radius: 0.1rem;}
+
+#layout .inviteFriends .tabWrap #tabCon .list:first-child{}
+#layout .inviteFriends .tabWrap #tabCon .list:first-child .friendList{overflow: hidden;}
+#layout .inviteFriends .tabWrap #tabCon .list:first-child .friendList h3{width: 54.545%; height: 0.26rem;line-height: 0.26rem; text-align: center; background: #ffd6bb; margin: 0px auto; font-size: 0.14rem; border-radius: 0.04rem; margin-top: 0.15rem;}
+#layout .inviteFriends .tabWrap #tabCon .list:first-child .friendList h3 span{color: #f58605; display: inline-block; margin-top: -2px;padding: 0px 2px; }
+#layout .inviteFriends .tabWrap #tabCon .list:first-child .friendList .fgx{width: 83.03%; margin: 0px auto; margin-top: 0.13rem; height: auto;}
+#layout .inviteFriends .tabWrap #tabCon .list:first-child .friendList .fgx img{width: 100%; height: auto; display: block;}
+#layout .inviteFriends .tabWrap #tabCon .list:first-child .friendList .friendsList{ margin-top: 0.15rem; } 
+#layout .inviteFriends .tabWrap #tabCon .list:first-child .friendList .friendsList .pList{overflow-x: hidden; overflow-y:scroll; height: 2rem;}
+#layout .inviteFriends .tabWrap #tabCon .list:first-child .friendList .friendsList .pList::-webkit-scrollbar{display:none}
+#layout .inviteFriends .tabWrap #tabCon .list:first-child .friendList .friendsList p{margin-bottom: 0.16rem;padding-bottom: 0px; overflow: hidden; font-size: 0.14rem;  color: #333; } 
+#layout .inviteFriends .tabWrap #tabCon .list:first-child .friendList .friendsList>p:first-child{color: #999999;}
+#layout .inviteFriends .tabWrap #tabCon .list:first-child .friendList .friendsList>p:first-child span:nth-child(2){color: #999999; font-size: 0.14rem; }
+#layout .inviteFriends .tabWrap #tabCon .list:first-child .friendList .friendsList p span{display: block;float: left;  text-align: center;} 
+#layout .inviteFriends .tabWrap #tabCon .list:first-child .friendList .friendsList p span:nth-child(1){width: 27%;}
+#layout .inviteFriends .tabWrap #tabCon .list:first-child .friendList .friendsList p span:nth-child(2){width: 25%;color: #dd0f26;font-size: 0.12rem;}
+#layout .inviteFriends .tabWrap #tabCon .list:first-child .friendList .friendsList p span:nth-child(3){width: 24%;}
+#layout .inviteFriends .tabWrap #tabCon .list:first-child .friendList .friendsList p span:nth-child(4){width: 24%;}
+
+#layout .inviteFriends .tabWrap #tabCon .list:last-child{font-size: 0.13rem; line-height: 0.20rem;color: #333333; padding: 0.27rem 0.2rem 0px 0.2rem; display: none;}
+#layout .inviteFriends .tabWrap #tabCon .list:last-child p{padding-bottom:0.13rem; }
+
+
+#layout .inviteFriends #faceMain{width: 61.389%; position: absolute; top:14%; left: 50%; margin-left: -30.694%;z-index: 10; display: none;}
+#layout .inviteFriends #faceMain .ewm{position: relative;}
+#layout .inviteFriends #faceMain .ewm>img{width: 100%; display: block; height: auto;}
+#layout .inviteFriends #faceMain .ewm #qrcode{width: 57.918%; position: absolute; left: 50%; margin-left:-28.959%;  top:20%;}
+#layout .inviteFriends #faceMain .ewm #qrcode img{width: 100%; height: auto; display: block;}
+#layout .inviteFriends #faceMain .ewm #qrcode img.imgLogo{position: absolute;left: 50%;top:50%;width:36%;height: 36%; display: block;margin-left: -18%;margin-top: -18%;}
+#layout .inviteFriends #faceMain .ewm #wxText{position: absolute; width: 100%; text-align: center; top:76%; color: #fff;}
+#layout .inviteFriends #faceMain .ewm #wxText p{font-size: 0.146rem; font-weight: bold;}
+#layout .inviteFriends #faceMain .ewm #wxText p span{color: #fec543;display: inline-block; margin-top: -2px;}
+#layout .inviteFriends #faceMain .closeBtn{width: 11.312%; height: auto; margin:0px auto; margin-top: 0.3rem; display: block;}
+#layout .inviteFriends #faceMain .closeBtn img{display: block; width: 100%; height: auto; }
+
+
+/* 新用户注册 */
+#layout .friendsRegistered{}
+#layout .friendsRegistered>img{width: 100%; height: auto; display: block;}
+#layout .friendsRegistered .regMain{background: #fff; width: 91.667%; margin: 0px auto; height: auto; overflow: hidden; border-radius: 0.06rem; padding: 0.2rem 0.2rem 0rem 0.2rem; }
+#layout .friendsRegistered .regMain h4{font-weight: normal; font-size: 0.15rem; color: #666666;text-align: center; height: 0.3rem;line-height: 0.3rem; margin-bottom: 0.2rem;}
+#layout .friendsRegistered .regMain ul{}
+#layout .friendsRegistered .regMain ul li{margin-bottom: 0.16rem; height:0.38rem; line-height: 0.38rem; background: #eeeeee; border-radius: 0.06rem;  overflow: hidden; position: relative;}
+#layout .friendsRegistered .regMain ul li input{height: 0.38rem;line-height: 0.20rem; background: #eeeeee; border: 0px;width: 100%; font-size: 0.14rem; float: left; caret-color: #f10;  outline: none; padding: 0px 0.1rem;     vertical-align: top;}
+#layout .friendsRegistered .regMain ul li a{ position: absolute; right: 0; top:0; color: red;font-size: 0.12rem; display: block; height: 0.38rem; width: auto; padding:0px  0.14rem 0px 0px;}
+#layout .friendsRegistered .regMain ul li:nth-child(2){margin-bottom: 0.26rem;}
+#layout .friendsRegistered .regMain ul li:last-child{height: 0.4rem; overflow: hidden;}
+#layout .friendsRegistered .regMain ul li:last-child a{background: #ff4951;display: block;text-align: center; width: 100%; height: 0.4rem; line-height: 0.4rem; color: #fff; font-size: 0.18rem;}
+
+
+/* 老用户提醒 */
+#layout .friendsRegistered .promptMain{background: #fff; width: 91.667%; margin: 0px auto; height: auto; overflow: hidden; border-radius: 0.06rem; padding: 0.2rem; color: #333333; font-size: 0.16rem;}
+#layout .friendsRegistered .promptMain h4{font-weight: normal;text-align: center; margin-top: 0.48rem;}
+#layout .friendsRegistered .promptMain p{line-height: 0.22rem; height: 0.8rem; margin-top: 0.2rem;}
+#layout .friendsRegistered .promptMain #inviteBtn{background: #ff4951;display: block;text-align: center; width: 100%; height: 0.4rem; line-height: 0.4rem; color: #fff; font-size: 0.18rem;border-radius: 0.06rem;}
+
+/* 新用户领取红包 */
+#layout .friendsRegistered .rewardMain{background: #fff; width: 91.667%; margin: 0px auto; height: auto; overflow: hidden; border-radius: 0.06rem; padding: 0.2rem 0px; color: #333333; font-size: 0.16rem;}
+#layout .friendsRegistered .rewardMain h4{text-align: center; margin-top: 0.1rem; margin-bottom: 0.2rem;  color: #666666;}
+#layout .friendsRegistered .rewardMain .hongbao{width: 61.667%; margin: 0px auto; height: auto; position: relative; margin-bottom: 0.05rem;}
+#layout .friendsRegistered .rewardMain .hongbao>img{width: 100%; height: auto; display: block;}
+#layout .friendsRegistered .rewardMain .hongbao>p{width: 100%; position: absolute; text-align: center; top:10%; color: #fff; font-size: 0.17rem; line-height: 0.3rem; }
+#layout .friendsRegistered .rewardMain .hongbao>p>span{font-size: 0.25rem; display: inline-block; margin-right: 0.04rem; margin-top: -4px;}
+#layout .friendsRegistered .rewardMain .hongbao>a{display: block; width: 52%; height: 0.25rem;line-height: 0.25rem; text-align: center; background: #fff; border-radius: 0.04rem; font-size: 0.14rem; color: #ff101b; left: 50%; margin-left: -26%; top: 72%; position: absolute;}
+.ui-modal-wrapper .icd-main{overflow: hidden;}
+.ui-modal-wrapper .icd-main>*{float: left;}
+
+.tanchu{animation: fk 0.5s ease-in forwards 0s 1 normal;-webkit-animation: fk 0.5s ease-in forwards 0s 1 normal;}
+
+.header{display: none; font-size: 0px;}
+
+
+
+@keyframes fk
+{
+    0%   {opacity: 1;transform: scale(0.3);}
+    100% {opacity: 1;transform: scale(1);}
+}
+ 
+@-webkit-keyframes fk 
+{
+    0%   {opacity: 1;-webkit-transform: scale(0.3);}
+    100% {opacity: 1;-webkit-transform: scale(1);}
+}
