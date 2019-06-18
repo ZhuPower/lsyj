@@ -1,0 +1,6 @@
+.upLoadWrap{text-align: center;}
+.upLoadWrap>h2{font-weight: normal; text-align: center; margin-bottom: 20px; }
+.upLoadMain>p{line-height: 24px; color: red;}
+.filePath{width: 590px;margin-top: 30px;line-height: 30px;text-indent: 1em;}
+.upBtn{width: 100px;height: 34px;vertical-align: middle;background: #4d90fe;color: #fff; border: 0px;cursor: pointer;}
+.upBtn+input{display: none;}

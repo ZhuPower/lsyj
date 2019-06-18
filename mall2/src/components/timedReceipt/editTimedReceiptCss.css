@@ -1,0 +1,17 @@
+.editTimedReceiptWrap{width: 800px; margin: 20px auto;}
+.editTimedReceiptWrap .ul{overflow: hidden;}
+.editTimedReceiptWrap .ul li{overflow: hidden; clear: both; margin-bottom: 10px;}
+.editTimedReceiptWrap .ul li>span{width: 80px; height: 34px; line-height: 34px; float: left; text-align: right; color: blue;}
+.editTimedReceiptWrap .ul li>input[type="text"]{ width: 696px; height: 30px; text-indent: 1em;}
+.editTimedReceiptWrap>h2{font-weight: normal; text-align: center; margin-bottom: 20px;}
+.editTimedReceiptWrap .ul li select{float: left; height: 34px; width: 590px; text-indent: 1em;}
+.upBtn{width: 100px !important; height: 34px !important; vertical-align: middle; background:#4d90fe; color: #fff; border: 0px; cursor:pointer;}
+.upBtn+input{display: none;}
+.banner{width: 590px !important;}
+.btnWrap{text-align: center;margin-top: 20px; margin-bottom: 20px;}
+.btnWrap input{width: 100px; height: 30px; margin-right: 20px; vertical-align: middle; background:#4d90fe; color: #fff; border: 0px; cursor:pointer;}
+.addCoupon,.delCoupon{float: left;margin-left: 20px;display: block;height: 34px;line-height: 34px; color: blue}
+.addCoupon:hover,.delCoupon:hover{color: red;}
+
+
+

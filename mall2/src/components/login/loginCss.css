@@ -1,0 +1,8 @@
+.loginWrap{position: fixed; width: 100%; height: 100%; left: 0;top:0; background: #EAEEF4}
+.loginMain{width: 400px; margin: 100px auto; }
+.loginMain h2{margin-bottom: 40px; font-size: 50px; color:#4F638F}
+.loginMain p{margin-bottom: 10px;}
+.loginMain span{width: 100px;text-align: right;display: inline-block;}
+.loginMain input{outline: none;-webkit-appearance: none;border-radius: 0; -webkit-box-shadow: 0 0 0px 1000px white inset; border: 1px solid #CCC!important; height: 30px; line-height: 30px; text-indent: 4px;}
+.login{ padding-left: 140px; margin-top: 30px;}
+.login a{color: #fff; text-decoration: none; display: inline-block; width: 90px; height: 30px; line-height: 30px; text-align: center; background: #3385ff;}

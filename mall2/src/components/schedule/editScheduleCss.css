@@ -1,0 +1,108 @@
+.submitBtn2,.content{display: none;}
+.editScheduleWrap{width: 800px; margin: 20px auto;}
+.editScheduleWrap .ul{overflow: hidden;}
+.editScheduleWrap .ul li{overflow: hidden; clear: both; margin-bottom: 10px;}
+.editScheduleWrap .ul li>span{width: 80px; height: 34px; line-height: 34px; float: left; text-align: right; color: blue;}
+.editScheduleWrap .ul li>input{ width: 696px; height: 30px; text-indent: 1em;}
+.editScheduleWrap>h2{font-weight: normal; text-align: center; margin-bottom: 20px;}
+.editScheduleWrap .ul li select{float: left; height: 34px; width: 180px; text-indent: 1em;}
+.btnWrap{text-align: center;margin-top: 20px; margin-bottom: 20px;}
+.btnWrap input{width: 100px; height: 30px; margin-right: 20px; vertical-align: middle; background:#4d90fe; color: #fff; border: 0px; cursor:pointer;}
+.createCode{width: 680px; height: 206px; outline: none;padding: 10px;}
+.run{display: inline-block; width: 100px; height: 30px; line-height: 30px; background:#4d90fe; color: #fff; text-align: center; vertical-align: middle; margin-right: 20px;}
+
+.proTemplate{display: none;}
+.proWrap .oddWrap,.proWrap .markWordWrap{display: none;}
+.proWrap.oddOn .oddWrap{display: inline-block;}
+.proWrap.oddOn .oddWrap span{width: 60px!important;}
+.proWrap.oddOn .oddWrap span.oddSpan{width: 100px!important;}
+.proWrap.oddOn .oddWrap .halfPrices{width: 280px!important; height: 25px; margin-left: 32px;}
+.proWrap.oddOn .oddWrap input{display: inline-block; vertical-align: middle;}
+
+.proWrap.markWordOn .markWordWrap{display: block;}
+.customizeWerap{width: 700px; float: left; background: #e6e6e6; overflow: hidden;}
+.customizeWerap ul>li>input{width: 530px!important;}
+.customizeWerap ul>li>span{width: 100px!important;}
+.customizeWerap ul>li>input[type="checkbox"]{width: 30px!important;}
+.customizeWerap .typeWrap{overflow: hidden; float: left;}
+.customizeWerap .typeWrap label{ margin-right: 10px; height: 34px; line-height: 34px;}
+.customizeWerap .typeWrap label input{margin-left: 5px;}
+.customizeWerap .typeWrap li{float: left; clear: none; margin-top: 10px;}
+.customizeWerap .addPor{float: right; height: 54px;line-height: 54px; margin-right: 20px;}
+.customizeWerap .cList{position: relative; border-top: 2px dashed #fff; clear: both; padding-top: 10px;}
+.customizeWerap .cList .delPor{position: absolute;right: 20px; top:50%; width: 30px; text-align: center; font-size: 18px; color: red; margin-top: -30px; line-height: 30px}
+.customizeWerap .imageWrap{padding: 10px 125px;}
+.customizeWerap .imageWrap>div{overflow: hidden;}
+.customizeWerap .imageWrap>div .list{float:left;position: relative;}
+.customizeWerap .imageWrap>div .list .site{position: absolute;width: 100%; height: 100%; top:0;left: 0;background:rgba(0, 0, 0, 0.6)!important;filter:Alpha(opacity=70); background:#000; display: none; }
+.customizeWerap .imageWrap>div .list .site>label{position: relative; display: block; margin: 0px 2%;}
+.customizeWerap .imageWrap>div .list .site>label{color: #fff;height: 24px; line-height: 24px;}
+.customizeWerap .imageWrap>div .list .site>label>input{color: #333; height: 24px; line-height: 24px; text-indent:2px;}
+.customizeWerap .imageWrap>div .list>img{display: block;width: 100%; height:auto; min-height: 112px;}
+.customizeWerap .imageWrap .col-1-list .list{width: 100%;}
+.customizeWerap .imageWrap .col-1-list .list .site>label{margin-top: 20px;}
+.customizeWerap .imageWrap .col-1-list .list input{width: 66%;}
+.customizeWerap .imageWrap .col-2-list .list{width: 50%; font-size: 14px;}
+.customizeWerap .imageWrap .col-2-list .list .site>label{margin-top: 20px;}
+.customizeWerap .imageWrap .col-2-list .list input{width: 42%;}
+.customizeWerap .imageWrap .col-3-list .list{width: 33.333%; font-size: 13px}
+.customizeWerap .imageWrap .col-3-list .list .site>label{margin-top: 15px;}
+.customizeWerap .imageWrap .col-3-list .list input{width: 38%;}
+.customizeWerap .imageWrap .col-4-list .list{width: 25%; font-size: 12px}
+.customizeWerap .imageWrap .col-4-list .list .site>label{margin-top: 8px;}
+.customizeWerap .imageWrap .col-4-list .list input{width: 24%;}
+.customizeWerap .imageWrap>div .list:hover .site{display: block;}
+.customizeWerap .timeWrap{}
+.customizeWerap .timeWrap input[type="date"]{width:247px!important; text-indent: 0px!important;}
+.upBtn{width: 100px !important; height: 34px !important; vertical-align: middle; background:#4d90fe; color: #fff; border: 0px; cursor:pointer;}
+.upBtn+input{display: none;}
+.banner{width: 590px !important;}
+
+.customizeWerap .imageWrap .upBtn{position: absolute;right: 2%; width: 40px !important; height: 26px !important;}
+.customizeWerap .imageWrap .col-1-list .upBtn{top:20px;}
+.customizeWerap .imageWrap .col-2-list .upBtn{top:20px;}
+.customizeWerap .imageWrap .col-3-list .upBtn{top:15px;}
+.customizeWerap .imageWrap .col-4-list .upBtn{top:8px;}
+
+
+.nameClass{}
+.tabSpan{width: 120px!important; display: inline-block; vertical-align: middle;}
+.tabInput,.timeInput{width: 30px!important; height: 34px!important; display: inline-block; vertical-align: middle;}
+
+.timeInput,.tabInput{float: left;}
+
+.nameClass,.titleInput,.leiBie{ float: left;}
+.nameClass,.titleInput{width: 176px!important;}
+.leiBie{width: 180px!important;}
+.chooseStore{width: 558px!important;}
+.addStore,.delStore{float: left;margin-left: 20px; display: block; height: 34px; line-height: 34px;}
+.addStore{}
+.delStore{}
+.addStore:hover,.delStore:hover{color: red;}
+.popStore{position: fixed; top:0;left: 0; width: 100%; height: 100%; z-index: 99;background:rgba(0, 0, 0, 0.6)!important;filter:Alpha(opacity=70); background:#000; display: none;}
+.popStore .popMain{width: 800px; height: 600px; position: absolute; top:50%; left: 50%; margin-top: -300px; margin-left: -400px; background: #fff; overflow-y: scroll; padding: 20px; padding-top: 0px}
+.popStore .popMain::-webkit-scrollbar {display: none;}
+.popStore .popMain h2{text-align: center; font-size: 20px; font-weight: normal; height: 50px; line-height: 50px;}
+.popStore .popMain ul{overflow: hidden;}
+.popStore .popMain ul li{overflow: hidden; margin-bottom: 10px;}
+.popStore .popMain ul li span{width: 80px !important; height: 34px; line-height: 34px; float: left; text-align: right; color: blue;}
+.popStore .popMain ul li>input{ width: 696px; height: 30px; text-indent: 1em;}
+.popStore .popMain ul li select{float: left; height: 34px; width: 180px;}
+.popStore .popMain ul li .chooseStore{width: 700px!important;}
+.storeInfo{overflow: hidden; background: #e6e6e6;}
+.storeListWrap{display: none;}
+.storeList{overflow: hidden;width: 100%;}
+.storeDiv{overflow: hidden;width: 100%; line-height: 30px; min-height: 30px;}
+.storeDiv span{float: left; width: 80px;  color: blue; text-align: right;}
+.storeDiv p{float: left; width: 600px; word-wrap:break-word}
+.storeLink{overflow: hidden;width: 100%; margin: 10px 0px;}
+.storeLink span{float: left; width: 80px;  color: blue; text-align: right;}
+.storeLink p{float: left; width: 560px; word-wrap:break-word}
+.storeLink a{display: block; line-height: 34px}
+.storeList{overflow: hidden;width: 100%;}
+.storeList a{display: block; float: left; overflow: hidden; height: auto;}
+.storeList a img{display: block;width: 100%; height: auto;}
+.col-1-a{width: 100%}
+.col-2-a{width: 50%}
+.col-3-a{width: 33.3333%}
+.col-4-a{width: 25%}

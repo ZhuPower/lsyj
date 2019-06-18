@@ -1,0 +1,24 @@
+.listHeader{height: 40px; line-height: 40px; background: #EFEFEF; overflow: hidden; border-top:1px solid #ccc;border-bottom:1px solid #ccc; clear: both; }
+.listHeader span{display: block; float: left; border-left: 1px solid #CCCCCC; box-sizing:border-box;}
+.listHeader span:nth-child(1),.listWrap ul li>span:nth-child(1){width: 5%; text-align: center; border:0px; }
+.listHeader span:nth-child(2),.listWrap ul li>span:nth-child(2){width: 5%; text-align: center;}
+.listHeader span:nth-child(3),.listWrap ul li>span:nth-child(3){width: 5%; text-align: center;}
+.listHeader span:nth-child(4),.listWrap ul li>span:nth-child(4){width: 65%; text-align: left; text-indent: 2em;}
+.listHeader span:nth-child(5),.listWrap ul li>span:nth-child(5){width: 15%; text-align: left; text-indent: 2em;}
+.listHeader span:nth-child(6),.listWrap ul li>span:nth-child(6){width: 5%; text-align: center;}
+.listWrap ul{}
+.listWrap ul li{overflow: hidden; height: 40px; line-height: 40px; border-bottom:1px solid #CCCCCC; }
+.listWrap ul li:nth-child(odd){background: #FFFFFF}
+.listWrap ul li:nth-child(even){background: #f8f8f8}
+.listWrap ul li:hover{background: #f0f6fe}
+.listWrap ul li{overflow: hidden; height: 40px; line-height: 40px;}
+.listWrap ul li>span{display: block; float: left;}
+.listWrap ul li>span>a{color: #3367ac}
+.page{text-align: center; margin-top: 10px;}
+.page a{margin-right: 5px; color: #333;}
+.page a:hover{color: red}
+.page a.no:hover{color: #333;}
+.addBtn{float: right; cursor: pointer; margin-bottom: 10px;}
+.addBtn:hover{color: red}
+
+

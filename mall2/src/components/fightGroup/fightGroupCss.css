@@ -1,0 +1,27 @@
+.fightGroupWrap{overflow: hidden;width: 800px; margin: 20px auto; height: auto;}
+.fightGroupWrap .ul{overflow: hidden;}
+.fightGroupWrap .ul li{overflow: hidden; clear: both; margin-bottom: 10px;}
+.fightGroupWrap .ul li>span{width: 80px; height: 34px; line-height: 34px; float: left; text-align: right; color: blue;}
+.fightGroupWrap .ul li>input{ width: 696px; height: 30px; text-indent: 1em;}
+.fightGroupWrap>h2{font-weight: normal; text-align: center; margin-bottom: 20px;}
+.fightGroupWrap .ul li select{float: left; height: 34px; width: 594px;}
+.fightGroupWrap .ul li .activityLink2{float: left; height:34px; line-height:34px;}
+.fightGroupWrap .ul li .activityLink{float: right; margin-right: 40px; display:block;height:32px; line-height:32px;color: blue}
+.fightGroupWrap .ul li .activityLink:hover{color: red}
+.btnWrap{text-align: center;margin-top: 20px; margin-bottom: 20px;}
+.btnWrap input{width: 100px; height: 30px; margin-right: 20px; vertical-align: middle; background:#4d90fe; color: #fff; border: 0px; cursor:pointer;}
+.upBtn{width: 100px !important; height: 34px !important; vertical-align: middle; background:#4d90fe; color: #fff; border: 0px; cursor:pointer;}
+.upBtn+input{display: none;}
+.banner{width: 590px !important;}
+
+.newName{width:306px!important; float: left;}
+.addGoods,.delGoods{float: left;margin-left: 20px;display: block;height: 34px;line-height: 34px; color: blue}
+.addGoods:hover,.delGoods:hover{color: red;}
+.wrap{width: 700px;margin-left: 80px;overflow: hidden; height: auto; background: #fdebd3;}
+.wrap .bannerMain{width: 100%; overflow: hidden; height: auto;}
+.wrap .bannerMain img{display: block; width: 100%; height: auto;}
+.wrap .listMain ul{overflow: hidden; width: 94%; margin: 0px auto; padding-bottom: 20px;}
+.wrap .listMain ul li{overflow: hidden;float:left; display: block; height: auto; margin-top: 15px;width: 50%;}
+.wrap .listMain ul li a{width: 86%; margin: 0px auto; display: block; height: auto; background: url(http://util.yijiago.com:8097/yiJiaGo/images/20190113/pting/pro_bug.png) no-repeat center top; background-size: 100% 100%;position: relative; overflow: hidden;}
+.wrap .listMain ul li a img{width: 100%;display: block; height: auto;}
+.wrap .listMain ul li a span{position: absolute; width: 100%; height: auto; text-align: center; left: 0px; top:0px; color: #000; height: 72px; line-height: 72px; font-size: 24px; display: inline-block;}

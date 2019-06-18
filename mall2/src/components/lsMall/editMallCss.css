@@ -1,0 +1,71 @@
+.editMallWrap{width: 864px; margin: 20px auto;}
+.editMallWrap>*{overflow: hidden; margin-bottom: 10px;}
+.editMallWrap>*>span,.selectImage>span{width: 160px; height: 34px; float: left; text-align: right; color: blue; line-height: 34px}
+.editMallWrap input{width: 700px;height: 30px;text-indent: 10px;}
+.addBanner,.addStore{cursor: pointer;}
+.addBanner:hover,.delBanner:hover,.addStore:hover,.delStore:hover,label>span:hover{color: red !important; cursor: pointer;}
+.mallBanner{}
+.mallBanner .selectImage{overflow: hidden; margin-bottom: 10px;}
+.mallBanner .selectImage>select{float: left; height: 34px; width: 580px;}
+.mallBanner .selectImage>span.addBanner{width: auto; float: right; margin-right: 20px;}
+.mallBanner .selectImage>span.delBanner{width: auto; float: right;}
+.mallBanner .imageInfo{padding-left: 160px;}
+.mallBanner .imageLeft{border: 1px solid #ccc; margin-bottom: 10px; overflow: hidden;}
+.mallBanner .imageLeft img{display: block; height: auto; width: 100%;}
+.mallBanner .imageRight>div{overflow: hidden; margin-bottom: 10px;}
+.mallBanner .imageRight>div span{height: 34px; float: left; text-align: right; color: blue; line-height: 34px}
+.mallBanner .imageRight>div input{width: 618px;float: left}
+.mallBanner .imageRight>div label input{width: 34px; height: 34px; }
+.mallBanner .imageRight>div select{width: 622px; height: 34px; float: left;}
+
+.mallStore{}
+.mallStore .selectFloor{overflow: hidden; margin-bottom: 10px;}
+.mallStore .selectFloor>span{ height: 34px; float: left; text-align: right; color: blue; line-height: 34px;}
+.mallStore .selectFloor>span:first-child{width: 160px;}
+.mallStore .selectFloor>select{float: left; height: 34px; width: 240px; margin-right: 20px;}
+.mallStore .selectFloor>span.addStore{width: auto; float: right; margin-right: 20px;}
+.mallStore .selectFloor>span.delStore{width: auto; float: right;}
+.mallStore .storeInfo{overflow: hidden; padding-left: 160px;}
+.mallStore .storeInfo .imageLeft{width: 157px; border: 1px solid #ccc; overflow: hidden; float: left; margin-right: 20px;}
+.mallStore .storeInfo .imageLeft img{width: 100%; height: auto; display: block;}
+.mallStore .storeInfo .imageRight{width: 524px;float: left; overflow: hidden;}
+.mallStore .storeInfo .imageRight input{width:438px;float: left;}
+.mallStore .storeInfo .imageRight label input{width: 34px; height: 34px;margin-right: 20px; }
+.mallStore .storeInfo .imageRight>div{margin-bottom: 10px;overflow: hidden;}
+.mallStore .storeInfo .imageRight>div span{height: 34px; float: left; text-align: right; color: blue; line-height: 34px}
+.btnWrap{text-align: center;margin-top: 20px; margin-bottom: 20px; text-indent: 160px;}
+.btnWrap input{width: 100px; height: 30px; margin-right: 20px; vertical-align: middle; background:#4d90fe; color: #fff; border: 0px; cursor:pointer; text-indent: 0px !important;}
+
+
+
+.popBanner,.popStore{position: fixed; top:0;left: 0; width: 100%; height: 100%; z-index: 99;background:rgba(0, 0, 0, 0.6)!important;filter:Alpha(opacity=70); background:#000; display: none;}
+.popBanner .popMain,.popStore .popMain{position:absolute; background: #fff; width: 702px; overflow: hidden; border-radius: 10px;padding:10px 20px 0px 20px; left: 50%; top:50%; margin-left: -351px;}
+.popBanner .popMain{ height: 589px;margin-top: -294px;}
+.popBanner .popMain>h3,.popStore .popMain>h3{text-align: center;margin-bottom: 20px; font-weight: normal;}
+.popBanner .bannerInfo{overflow: hidden;}
+.popBanner .imageLeft{width: 700px; height: 350px; border: 1px solid #ccc;}
+.popBanner .imageLeft img{width: 100%; height: auto; display: block;}
+.popBanner .imageRight>div{overflow: hidden; margin-bottom: 10px;}
+.popBanner .imageRight>div span{height: 34px; float: left; text-align: right; color: blue; line-height: 34px}
+.popBanner .imageRight>div input{width: 618px;float: left}
+.popBanner .imageRight>div label input{width: 34px; height: 34px; }
+.popBanner .imageRight>div select{width: 622px; height: 34px; float: left;}
+.popMain .btnWrap{text-indent: 0px;}
+
+
+.popStore .popMain{ height: 291;margin-top: -145px;}
+.popStore .storeInfo{overflow: hidden;}
+.popStore .storeInfo .imageLeft{width: 196px; height:218px; border: 1px solid #ccc; overflow: hidden; float: left; margin-right: 20px;}
+.popStore .storeInfo .imageLeft img{width: 100%; height: auto; display: block;}
+.popStore .storeInfo .imageRight{width: 482px;float: left; overflow: hidden;}
+.popStore .storeInfo .imageRight input{width:395px;  float: left;}
+.popStore .storeInfo .imageRight label input{width: 34px; height: 34px;margin-right: 20px; }
+.popStore .storeInfo .imageRight>div{margin-bottom: 10px;overflow: hidden;}
+.popStore .storeInfo .imageRight>div span{height: 34px; float: left; text-align: right; color: blue; line-height: 34px}
+.popStore .storeInfo .imageRight select{float: left; height: 34px; width: 400px;} 
+
+.upBtn{width: 100px !important; height: 34px !important; vertical-align: middle; background:#4d90fe; color: #fff; border: 0px; cursor:pointer; text-indent: 0px !important;}
+.upBtn+input{display: none;}
+.banner,.newBanner{width: 517px !important;}
+.storeSrc{width: 337px !important;}
+.newStore{width: 294px !important;}

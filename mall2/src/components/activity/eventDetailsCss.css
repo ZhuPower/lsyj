@@ -1,0 +1,20 @@
+.eventDetailsWrap{}
+.quillWrapper{float:left; width: 704px;}
+.submitBtn2,.content{display: none;}
+.eventDetailsMain{width: 864px; margin: 20px auto;}
+.eventDetailsMain .ul{overflow: hidden; height: auto;}
+.eventDetailsMain .ul li{overflow: hidden; clear: both; margin-bottom: 10px;}
+.eventDetailsMain .ul li>span{width: 160px; height: 34px; float: left; text-align: right; color: blue; line-height: 34px}
+.eventDetailsMain .ul li>input,.li-right>input{ width: 700px; height: 30px; text-indent: 10px;}
+.eventDetailsMain .ul li .li-right{width: 700px;height: auto; display: block; float: left;}
+.eventDetailsMain .ul li .li-right img{display: block; width: 100%; height: auto; margin-bottom: 10px;}
+.eventDetailsMain>h2{font-weight: normal; text-align: center; margin-bottom: 20px;}
+.btnWrap{text-align: center;margin-top: 20px; margin-bottom: 20px;}
+.eventDetailsMain input[type="text"]{color: #aaa;}
+.eventDetailsMain input[type="text"].on{color: #000;}
+.btnWrap input{width: 100px; height: 30px; margin-right: 20px; vertical-align: middle; background:#4d90fe; color: #fff; border: 0px; cursor:pointer;}
+.createCode{width: 700px; height: 100px; outline: none;text-indent: 1em;}
+.run{display: inline-block; width: 100px; height: 30px; line-height: 30px; background:#4d90fe; color: #fff; text-align: center; vertical-align: middle; margin-right: 20px;}
+.upBtn{width: 100px !important; height: 34px !important; vertical-align: middle; background:#4d90fe; color: #fff; border: 0px; cursor:pointer;}
+.upBtn+input{display: none;}
+.banner{width: 590px !important;}
