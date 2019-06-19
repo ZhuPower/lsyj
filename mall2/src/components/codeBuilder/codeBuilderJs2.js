@@ -105,6 +105,7 @@ export const codeBuilder2 = {
         }
     },
 	created(){
+        console.log('2019.6.19 15:38')
               this.bPermission = oPermission[sessionStorage.permission].codeBuilder2
         this.getData()
 	},

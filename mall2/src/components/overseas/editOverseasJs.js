@@ -44,7 +44,7 @@ export const editOverseas = {
                                 oJson:{},
                                 name:'',
                                 bPermission:false,
-                                bCheck:false
+                                aOnOff:[]
         }
     },
     props: ['isDetails','index', 'sName','isNew'],
@@ -220,9 +220,10 @@ export const editOverseas = {
                 alert(sPrompt)
             }else{
                 setTimeout(() => {
-
-                    if(this.bCheck){
+                    if(this.aOnOff.join(",").indexOf('0') == -1){
                         let _obj = this.activityData
+
+                        console.log(_obj)
 
                        _obj.template.push("app")
                        _obj.template.push("globalPurchase")
@@ -236,9 +237,9 @@ export const editOverseas = {
                         _obj.banner = this.banner
                         _obj.title = this.title
                         _obj.date = time
-                        //this.headBackground ? _obj.headBackground = this.headBackground : false
+                        this.headBackground ? _obj.headBackground = this.headBackground : false
 
-                        console.log(_obj)
+                       console.log(_obj)
 
                         let jsonStr = JSON.stringify(_obj)
 
@@ -278,7 +279,12 @@ export const editOverseas = {
                         for(let y=0; y<this.aPrompt.length; y++){
                             sPrompt += (y+1) +'.'+this.aPrompt[y]+'。'+'\n'
                         }
-                        alert(sPrompt)
+                        if(sPrompt){
+                            alert(sPrompt)
+                        }else{
+                            let cw = this.aOnOff.join("").indexOf('0')+1
+                            alert("请确保第"+cw+"栏的数据的正确")
+                        }
                     }
                     
                 },1000)  
@@ -425,9 +431,11 @@ export const editOverseas = {
         setAproduct(){
             let oWrap = this.$refs.proWrap
             let aDiv = oWrap.children
-            
+            this.aOnOff = []
             for(let i=0; i<aDiv.length; i++){
+                this.aOnOff[i]='1'
                 if(aDiv[i].className == 'cList'){
+                    this.aOnOff[i]='0'
                     let oSelect = aDiv[i].getElementsByClassName("tabSelect")[0] || false
                     let tabSelect = oSelect ? oSelect.value : 0  
                     let inputProId = aDiv[i].getElementsByClassName("proId")[0].value  
@@ -466,7 +474,7 @@ export const editOverseas = {
                     if(inputProId && this.isRepeat(aProId2)){
                         this.getProduct(inputProId).then(res => {
                             let aInfo = res.info
-                            //console.log(aProId.length)
+                            console.log(res)
                             if((typeof res).toLowerCase() == 'string'){
                                 for(let z=0;z<aProId.length;z++){
                                     ((num) =>{
@@ -480,7 +488,8 @@ export const editOverseas = {
 
                             }else{
                                 if(aProId.length == aInfo.length){
-                                    this.bCheck = true
+                                    this.aOnOff[i]='1'
+                                    
                                     let oItem = {}
 
                                     oItem.type = 'txt'
@@ -493,6 +502,16 @@ export const editOverseas = {
 
                                     this.activityData.items[aDiv[i].num] = oItem
 
+                                }else{
+                                    for(let z=0;z<aProId.length;z++){
+                                        ((num) =>{
+                                            this.getProduct(aProId[num]).then(res => {
+                                                if((typeof res).toLowerCase() == 'string'){
+                                                    this.aPrompt.push('请检查id：'+aProId[num]+"是否正确！")
+                                                }
+                                            })
+                                        })(z)
+                                    }
                                 }
                             }
                         })
@@ -509,7 +528,7 @@ export const editOverseas = {
                 }else if(aDiv[i].className == 'cList imageWrap'){
                     let aBox = aDiv[i].children[0].children
                     let aLen = aBox.length
-                    this.bCheck = true
+                    
 
                     this.getNumber(i,aDiv)
 
@@ -538,7 +557,7 @@ export const editOverseas = {
                     
                     let aProId = inputProId.split(',')
                     let aImgSrc = inputImgSrc.split(',')
-                    this.bCheck = true
+                    
                     
                     if(inputRowNum){
                         inputRowNum = this.getStr(inputRowNum.replace(/\s/ig,','))
@@ -592,7 +611,7 @@ export const editOverseas = {
                             let aInfo = res.info
 
                             if(aProId.length == aInfo.length){
-                                this.bCheck = true
+                                
                                 let oItem = {}
 
                                 oItem.type = 'timing'

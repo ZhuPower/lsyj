@@ -26,7 +26,7 @@
 
                     oBox.innerHTML = '<div class="ui-loading-wrap"><div class="ui-loading-spinner"><img src="https://test.yijiago.com/gly/yiJiaGo/images/icon/load.png"> <svg viewBox="25 25 50 50" class="circular"><circle cx="50" cy="50" r="20" fill="none" class="path"></circle></svg> <span class="text">请求加载中...</span></div></div>';
                     this.getHerf();
-                    console.log(jData.items);
+                    //console.log(jData.items);
                     this.getItems(jData.items);
                 },
                 setCode: function() {
@@ -147,7 +147,7 @@
                     return setHtml;
                 },
                 getStrHtml: function(obj, str) {
-                    console.log(obj)
+                    //console.log(obj)
 
                     var sType = obj.type;
                     var arr = obj.aProduct;
@@ -394,9 +394,6 @@
                                 }
 
                                 if (_obj) {
-
-                                    proImg.src = _obj.image_default_id + '?t=' + Math.random();
-                                    proImg.style.display = "block";
                                     proInfo.innerHTML = _obj.title;
                                     price.innerHTML = that.getnum(_obj.price);
                                     del.innerHTML = that.getnum(_obj.mkt_price);
@@ -407,6 +404,9 @@
                                     if (_obj.mkt_price == _obj.price) {
                                         oLi.classList.add("hideDel");
                                     }
+
+                                    proImg.src = _obj.image_default_id + '?t=' + Math.random();
+                                    proImg.style.display = "block";
                                 }
                             })
                         })(i)
