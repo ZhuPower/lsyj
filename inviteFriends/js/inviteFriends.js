@@ -16,7 +16,7 @@ var into = {
  		wz:'wz.png?t='+Math.random(),
  		yhq:'yhq.png?t='+Math.random(),
  		flq:'flq.png?t='+Math.random(),
- 		gwq:'gwq.png?t='+Math.random(),
+ 		gwq:'jfq.png?t='+Math.random(),
  		yhqbj:'yhqbj.png?t='+Math.random(),
  		yq:'yq.png?t='+Math.random(),
  		fgx:'fgx.png?t='+Math.random(),
@@ -139,7 +139,7 @@ var into = {
 									if(type2 == '2'){
 										typeName = '元返利券';
 									}else if(type2 == '3'){
-										typeName = '元购物券';
+										typeName = '积分券';
 									}
 
 									reward = (str2==null) ? 0 : str2;
@@ -748,7 +748,7 @@ var into = {
 						sRes ='{'+sRes.replace(/{/gi,"").replace(/}/gi,",").substr(0,sRes.length-1)+'}';
 						var oSign = eval('(' + sRes + ')');
 
-						return endFn&&endFn(oSign);
+						endFn&&endFn(oSign);
 					})
 	 			}
 	 		},
@@ -774,7 +774,7 @@ var into = {
 	 				'<img :src="into.oImg.yhq" v-if="is_yhq" class="yhq"/>'+
 	 				'<img :src="into.oImg.flq" v-if="is_flq" class="yhq"/>'+
 	 				'<img :src="into.oImg.gwq" v-if="is_gwq" class="yhq"/>'+
-	 				'<p :class="prizeClass">￥<span v-text="prizeMoney"></span></p>'+
+	 				'<p :class="prizeClass"><a v-if="!is_gwq">￥</a><span v-text="prizeMoney"></span></p>'+
 	 				'<p class="yhq_mj" v-text="yhq_mj" v-if="is_yhq"></p>'+
 	 			'</div>'+
 	 			'<div class="btnWrap">'+

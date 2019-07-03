@@ -1,0 +1,23 @@
+<style type="text/css">
+    .header{display: none;}
+    a.couponsBtn{display: block; height: auto; width: 100%; overflow: hidden; box-sizing:border-box;}
+    a.couponsBtn img{width: 100%; height: auto; display: block;}
+</style>
+<div class="couponWrap" id="couponWrap">
+    <a href="javascript:;" class="couponsBtn"><img src="" /></a>
+</div>
+<script type="text/javascript" id="clearCache">
+    var oScript = document.getElementById("clearCache");
+    var cScript1 = document.createElement("script");
+    cScript1.type = "text/javascript";
+    cScript1.src = "https://test.yijiago.com/gly/yiJiaGo/activity/setCoupon1.js?t1=" + Math.random();
+    var cScript2 = document.createElement("script");
+    cScript2.type = "text/javascript";
+    cScript2.src = "https://test.yijiago.com/gly/yiJiaGo/schedule/couponInfo_schedule.js?t2=" + Math.random();
+    var cScript3 = document.createElement("script");
+    cScript3.type = "text/javascript";
+    cScript3.src = "https://test.yijiago.com/gly/yiJiaGo/activity/couponBase.js?t3=" + Math.random();
+    oScript.parentNode.insertBefore(cScript1, oScript);
+    oScript.parentNode.insertBefore(cScript2, oScript);
+    oScript.parentNode.insertBefore(cScript3, oScript);
+</script>
