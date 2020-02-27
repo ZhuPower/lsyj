@@ -15,6 +15,7 @@ export const upLoad = {
             oInput.click()
             oInput.onchange = function(){
                 let str = this.files[0].name
+                let str2 = this.files[0].type
                 upImage2(this).then(res => {
                     if(str == 'changeConfig.js'){
                         that.filePath = 'https://test.yijiago.com/gly/yiJiaGo/activity/changeConfig.js'
@@ -25,7 +26,11 @@ export const upLoad = {
                     }else if(str.indexOf('_schedule')>-1){
                         that.filePath = 'https://test.yijiago.com/gly/yiJiaGo/schedule/'+str
                     }else{
-                        alert('请上传规定的文件！')
+                        if(str2.indexOf('image')>-1){
+                            that.filePath = res.name;
+                        }else{
+                           alert('请上传规定的文件！') 
+                        }
                     }
                 })  
             }

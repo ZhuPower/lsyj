@@ -8,7 +8,7 @@ export const fightGroup = {
                                     oJson:{},
                                     arrId:[],
                                     strId:'',
-                                    activityLink0:'http://www.yijiago.com/h5/',
+                                    activityLink0:'https://www.yijiago.com/h5/',
                                     activityLink:'',
                                     activityLink2:'',
                                     bNew:false,

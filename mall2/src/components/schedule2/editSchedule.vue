@@ -5,6 +5,9 @@
             <li><span>标题：</span><input type="text" v-model="scheduleInfo.title"></li>
             <li>
             <span>档期：</span><input type="text" v-model="scheduleInfo.number" class="nameClass">
+            <span>半价：</span><input type="checkbox" v-model="halfPriceInput" class="halfPriceInput"/>
+            <span>定时：</span><input type="checkbox" v-model="timeInput" class="timeInput"/>
+            <span>TAB：</span><input type="checkbox" v-model="tabInput" class="tabInput"/>
             
             <!-- <span>门店：</span>
             <select ref="client" v-model="scheduleInfo.leiBie" class="leiBie">
@@ -12,11 +15,12 @@
               <option value="x">小门店</option>
               <option value="jp">精品门店</option>
             </select> -->
-             <span class="titleSpan">name：</span><input type="text" v-model="scheduleInfo.activityName" class="titleInput">
-             <span>半价：</span><input type="checkbox" v-model="halfPriceInput" class="halfPriceInput"/>
-             <span>定时：</span><input type="checkbox" v-model="timeInput" class="timeInput"/>
-             <span>TAB：</span><input type="checkbox" v-model="tabInput" class="tabInput"/>
-             <span>分类：</span><input type="checkbox" v-model="sortInput" class="sortInput"/>
+             
+            </li>
+            <li>
+              <span class="titleSpan">name：</span><input type="text" v-model="scheduleInfo.activityName" class="titleInput">
+              <span>分类：</span><input type="checkbox" v-model="sortInput" class="sortInput"/>
+              <span>水果：</span><input type="checkbox" v-model="fruitInput" class="fruitInput"/>
             </li>
             <li>
                 <span>客户端：</span>
@@ -53,6 +57,8 @@
             <li v-if="timeInput || sortInput"><span class="timeSpan">时间段：</span><input type="text" v-model="sTimeLi"></li>
             <li v-if="tabInput"><span>TAB背景：</span><input type="text" v-model="headBackground"></li>
             <li v-if="tabInput"><span>TAB类别：</span><input type="text" v-model="sTabLi"></li>
+            <li v-if="fruitInput"><span>Head图：</span><div class="divSrc divSrc1" ref="divSrc1"></div><input type="button"  value="上传图片" class="upBtn" @click="upBanner2($event)" /></li>
+            <li v-if="fruitInput"><span>Con图：</span><div class="divSrc" ref="divSrc2"></div><input type="button"  value="上传图片" class="upBtn" @click="upBanner2($event)" /></li>
             <li>
                 <span>选择门店：</span>
                 <select class="chooseStore" ref="chooseStore" v-model="chooseStore">

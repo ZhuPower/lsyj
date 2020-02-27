@@ -11,6 +11,7 @@
       <router-link to="/fightGroup" :class="{active: ($route.path.indexOf('/fightGroup') >-1 ? true :false)}" v-if="setPermission.fightGroup">拼团活动</router-link>
       <router-link to="/lsMall" :class="{active: ($route.path.indexOf('/lsMall') >-1  ? true :false)}" v-if="setPermission.lsMall">购物商场</router-link>
       <router-link to="/eventDetails" :class="{active: ($route.path.indexOf('/eventDetails') >-1 ? true :false)}" v-if="setPermission.eventDetails">商场活动</router-link>
+      <router-link to="/upImg" :class="{active: ($route.path.indexOf('/upImg') >-1 ? true :false)}" v-if="setPermission.upImg">招商Banner</router-link>
       <router-link to="/upLoad" :class="{active: ($route.path.indexOf('/upLoad') >-1 ? true :false)}" v-if="setPermission.upLoad">上传文件</router-link>
     </div>
     <div class="home-right">

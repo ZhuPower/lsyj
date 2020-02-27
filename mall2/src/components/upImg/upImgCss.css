@@ -1,0 +1,19 @@
+.upImgWrap{}
+.upImgWrap>h2{font-weight: normal; text-align: center; margin-bottom: 20px; }
+.upImgMain{width: 800px; margin: 20px auto;}
+.bannerTitle{ font-weight: bold; overflow: hidden; border-bottom: 1px solid #ccc; height: 40px;line-height: 40px;}
+.bannerTitle a{float: right; font-weight: normal;}
+.upImgMain ul{}
+.upImgMain ul li{padding-top: 30px; padding-bottom: 15px; position: relative; border-top: 1px dashed #ccc;}
+.upImgMain ul li:first-child{border-top:0px;}
+.upImgMain ul li>div{margin-bottom: 15px; overflow: hidden;}
+.upImgMain ul li>div>*{float: left;}
+.upImgMain ul li>div>span{width: 100px; text-align: right; display: block; height: 30px; line-height: 30px;}
+.upImgMain ul li>div>input[type="button"]{margin-left: 15px;}
+.upImgMain ul li>a{position: absolute; right: 0px; top:64px; color: red;}
+input[type="text"]{width: 500px;line-height: 30px;text-indent: 1em;}
+.upImgMain ul li>div:first-child>input{width: 616px;}
+.upBtn{width: 100px;height: 34px;vertical-align: middle;background: #4d90fe;color: #fff; border: 0px;cursor: pointer;}
+input[type="file"]{display: none;}
+.btnMain{text-align: center;margin-top: 20px; margin-bottom: 20px;}
+.btnMain a{width: 100px; height: 30px; line-height: 30px; margin-right: 20px; vertical-align: middle; background:#4d90fe; color: #fff; border: 0px; cursor:pointer; display: inline-block;}

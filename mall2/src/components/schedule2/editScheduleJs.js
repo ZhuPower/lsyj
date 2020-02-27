@@ -32,7 +32,7 @@ export const editSchedule = {
             sTabLi:'',
             aTabLi:[],
             arrNo:[],
-            headBackground:'https://test.yijiago.com/gly/yiJiaGo/images/20190314/11-37-10.png',
+            headBackground:'',//https://test.yijiago.com/gly/yiJiaGo/images/20190314/11-37-10.png
             href:'http://www.yijiago.com/h5/#/member-help-detail/5803',
             href2:'#/member-help-detail/5803',
             scheduleData:null,
@@ -45,6 +45,7 @@ export const editSchedule = {
                 background:'',
                 banner:'',
                 port: true,
+                headBackground:'',
                 storeList:{}
             },
             chooseStore:'0',
@@ -62,7 +63,8 @@ export const editSchedule = {
             aTimeLi:[],
             activityNameArr:[],
             csvInput:'',
-            csvPosition:'',
+            fruitInput:false,
+            csvPosition: this.fruitInput ? '1,2,3' : '',
             storeTemplate:{},
             sortInput:false,
             sImgSrc:'',
@@ -223,6 +225,7 @@ export const editSchedule = {
             _this.scheduleInfo.activityName = obj2.activityName
             _this.scheduleInfo.background = obj2.background
             _this.scheduleInfo.banner = obj2.banner
+            _this.scheduleInfo.headBackground = obj2.headBackground
             _this.scheduleInfo.storeList = obj2.storeList
 
             _this.getStoreList(_this.scheduleInfo.storeList)
@@ -422,7 +425,7 @@ export const editSchedule = {
                 if(JSON.stringify(this.scheduleInfo.storeList) == "{}"){
                     if(this.csvInput){
                         this.getCsv().then((res)=>{
-                           // console.log(res) 
+                            //console.log(res) 
                             let aJson = []
                             let storeKey = []
                             let storeValue = []
@@ -434,13 +437,39 @@ export const editSchedule = {
                             }
                             //console.log(storeValue)
 
-                            for(let i = 0; i<res.length;i++){
-                                aJson[i] = []
-                                for(let ii=0;ii<res[i].length;ii++){
-                                    if(i==0){
-                                        if(ii%2==0){
-                                           for(let iii=0;iii<storeValue.length;iii++){
-                                
+                            if(!this.fruitInput){
+                                for(let i = 0; i<res.length;i++){
+                                    aJson[i] = []
+                                    for(let ii=0;ii<res[i].length;ii++){
+                                        if(i==0){
+                                            if(ii%2==0){
+                                               for(let iii=0;iii<storeValue.length;iii++){
+                                    
+                                                let sResValue = res[i][ii].replace(/\s*/g,"").replace(/\d*/g,"").replace(/店/g,"")
+
+                                                if(sResValue == storeValue[iii]){
+                                                    //console.log(sResValue)
+                                                    aJson[i].push(storeKey[iii])
+                                                }else{
+                                                    console.log(sResValue)
+                                                }
+
+                                               }
+                                            } 
+                                        }else{
+                                            if(ii%2==1){
+                                                aJson[i].push(res[i][ii])
+                                            } 
+                                        }
+                                    }
+                                }
+                            }else{
+                                for(let i = 0; i<res.length;i++){
+                                    aJson[i] = []
+                                    for(let ii=0;ii<res[i].length;ii++){
+                                        if(i==0){
+                                            for(let iii=0;iii<storeValue.length;iii++){
+                                    
                                             let sResValue = res[i][ii].replace(/\s*/g,"").replace(/\d*/g,"").replace(/店/g,"")
 
                                             if(sResValue == storeValue[iii]){
@@ -448,12 +477,10 @@ export const editSchedule = {
                                                 aJson[i].push(storeKey[iii])
                                             }
 
-                                           }
-                                        } 
-                                    }else{
-                                        if(ii%2==1){
-                                            aJson[i].push(res[i][ii])
-                                        } 
+                                           } 
+                                        }else{
+                                            aJson[i].push(res[i][ii]) 
+                                        }
                                     }
                                 }
                             }
@@ -500,6 +527,9 @@ export const editSchedule = {
             let time = d.getFullYear() + '-' + (d.getMonth()+1) +'-' + d.getDate()
             let n = this.index
             let sName = this.sName
+            if(this.tabInput){
+                this.scheduleInfo.headBackground = this.headBackground;
+            }
             let jsonStr = JSON.stringify(this.scheduleInfo)
             let onSave = false
             let onSave2 = false
@@ -897,6 +927,20 @@ export const editSchedule = {
                 return Promise.resolve(res.data)
             })
         },
+        upBanner2(e){
+            let oInput = this.$refs.fileBanner
+            let that = e.target;
+            oInput.click()
+            oInput.onchange = function(){
+                upImage(this).then(res => {
+                    if(res.code == 0){
+                        let obj = that.parentNode.children[1];
+                        let html = obj.innerHTML;
+                        obj.innerHTML = html + '<p>'+res.name+'</p>';
+                    }
+                })  
+            }
+        },
         upBanner(){
             let oInput = this.$refs.fileBanner
             let that = this
@@ -950,6 +994,8 @@ export const editSchedule = {
                 if(arr_0.length>0){
                     if(this.tabInput){
                         obj_0.content[0].productIds = arr_0
+                    }else if(this.fruitInput){
+                        obj_0.content[0].productId = arr_0[0]
                     }else{
                         obj_0.productIds = arr_0
                     }
@@ -984,6 +1030,25 @@ export const editSchedule = {
                         "productIds": [],
                         "aHalfPrice": false
                     }]
+                }
+            }else if(this.fruitInput){
+                let aP = this.$refs.divSrc1.children;
+                let aP2 = this.$refs.divSrc2.children;
+                json = {
+                    "type": "tabImg",
+                    "nameImg": aP[num].innerHTML,
+                    "content": [
+                        {
+                            "type": "img",
+                            "imgSrc": (num==0)?aP2[0].innerHTML:aP2[2].innerHTML,
+                            "productId":''
+                        },
+                        {
+                            "type": "img",
+                            "imgSrc": (num==0)?aP2[1].innerHTML:aP2[3].innerHTML,
+                            "productId":'javascript:;'
+                        }
+                    ]
                 }
             }else if(this.sortInput){
                 this.sImgSrc = this.getStr(this.sImgSrc.replace(/\s/ig,','))
@@ -1052,9 +1117,17 @@ export const editSchedule = {
 
             if(!this.scheduleInfo.banner){this.aPrompt.push('请上传banner')}
 
-             if(this.tabInput){if(!this.sTabLi){ this.aPrompt.push('请先输入TAB类别')}}
-             if(this.timeInput){if(!this.sTimeLi){ this.aPrompt.push('请先输入时间段')}}
-             if(this.sortInput){if(!this.sImgSrc){ this.aPrompt.push('请先输入栏目图片')}}
+            if(this.tabInput){if(!this.sTabLi){ this.aPrompt.push('请先输入TAB类别')}}
+            if(this.timeInput){if(!this.sTimeLi){ this.aPrompt.push('请先输入时间段')}}
+            if(this.sortInput){if(!this.sImgSrc){ this.aPrompt.push('请先输入栏目图片')}}
+            if(this.fruitInput){
+
+                if(!(this.$refs.divSrc1.children.length>=2)){ 
+                    this.aPrompt.push('请上传tab头部图片按钮')
+                }else if(!(this.$refs.divSrc2.children.length>=4)){
+                     this.aPrompt.push('请上传tab分页商品图片')
+                }
+             }
 
             if(this.aPrompt.length>0){
                 let sPrompt = '' 

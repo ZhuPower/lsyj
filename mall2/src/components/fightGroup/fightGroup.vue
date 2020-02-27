@@ -30,7 +30,7 @@
         </div>
         <div class="listMain">
           <ul>
-            <li v-for="(item,index) in arrId" v-if="item!='no'"><a :href="'http://www.yijiago.com/h5/#/goods/'+item" target="_blank"><img src="http://util.yijiago.com:8097/yiJiaGo/images/20190113/pting/pro_img.png"><span v-text="aStoreName[index]"></span></a></li>
+            <li v-for="(item,index) in arrId" v-if="item!='no'"><a :href="'http://www.yijiago.com/h5/#/goods/'+item" target="_blank"><img src="https://test.yijiago.com/gly/yiJiaGo/images/20190113/pting/pro_img.png"><span v-text="aStoreName[index]"></span></a></li>
           </ul>
         </div>
       </div>

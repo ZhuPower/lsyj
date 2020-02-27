@@ -6,7 +6,7 @@
       <p>注：上传成功后会替换原有文件，请先下载原文件修改后再上传</p>
       <input type="text" class="filePath" v-model="filePath">
       <input type="button"  value="上传文件" class="upBtn" @click="upFile()" />
-      <input type="file" accept="text/css,text/javascript,application/javascript" ref="upInput">
+      <input type="file" accept="text/css,text/javascript,application/javascript,image/gif,image/jpeg,image/jpg,image/png" ref="upInput">
     </div>
   </div>
 </template>

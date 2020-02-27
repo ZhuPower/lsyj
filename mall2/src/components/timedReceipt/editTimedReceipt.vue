@@ -1,9 +1,9 @@
 <template>
   <div class="editTimedReceiptWrap">
     <ul class="ul">
-        <li><span>title：</span><input type="text" v-model="oJson.title"></li>
+        <li><span class="titleSpan">title：</span><input type="text" v-model="oJson.title" class="titleInput"><span class="mobileSpan">手机号：</span><input type="checkbox" v-model="oJson.type" class="mobileInput"/></li>
         <li v-if="(!isAdd)&&(!isNew)">
-            <span>优惠券ID：</span>
+            <span>选择活动：</span>
             <select ref="coupon" v-model="coupon">
               <option v-for="(item,key) in oJson.couponInfo" :value="key"  v-text="item.couponId"></option>
             </select>
@@ -25,6 +25,12 @@
           <input type="text" class="banner"  v-model="couponInfo.imgSrc.end">
           <input type="button"  value="上传图片" class="upBtn" @click="upBanner2()"  />
         </li>
+        <li v-if="oJson.type">
+          <span>已领取图：</span>
+          <input type="text" class="banner" v-model="oJson.successImg">
+          <input type="button"  value="上传图片" class="upBtn" @click="upBanner3()"  />
+        </li>
+        <li v-if="oJson.type"><span>跳转链接：</span><input type="text" v-model="oJson.targetUrl"></li>
         <li><span>背景：</span><input type="text" v-model="couponInfo.imgBj"></li>
      </ul>
      <div class="btnWrap">

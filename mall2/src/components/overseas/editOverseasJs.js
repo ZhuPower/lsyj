@@ -44,7 +44,13 @@ export const editOverseas = {
                                 oJson:{},
                                 name:'',
                                 bPermission:false,
-                                aOnOff:[]
+                                aOnOff:[],
+                                popShow:false,
+                                sPrompt:'',
+                                popBtnShow:true,
+                                errorArr:[],
+                                typeTab:false,
+                                typeTab2:false
         }
     },
     props: ['isDetails','index', 'sName','isNew'],
@@ -55,6 +61,16 @@ export const editOverseas = {
                 this.$refs.proWrap.className = _str + ' markWordOn' 
             }else{
                 this.$refs.proWrap.className = _str.replace(/\smarkWordOn/,'')
+            }
+        },
+        typeTab(){
+            if(this.typeTab){
+                this.typeTab2 = false;
+            }
+        },
+        typeTab2(){
+            if(this.typeTab2){
+                this.typeTab = false;
             }
         }
     },
@@ -107,6 +123,14 @@ export const editOverseas = {
             this.title = this.oJson.title
             this.background = this.oJson.background
             this.banner = this.oJson.banner
+
+            if(this.oJson.typeTab){
+                this.typeTab = this.oJson.typeTab;
+            }
+
+            if(this.oJson.typeTab2){
+                this.typeTab2 = this.oJson.typeTab2;
+            }
 
              if(template["app"]){
                         let obj = template["app"]["templateColumn"]["globalPurchase"]
@@ -188,7 +212,7 @@ export const editOverseas = {
                     },100*i)
             }
         },
-         bSubmit(){
+        bSubmit(){
             let template = this.template
             let appHtml = this.appHtml
             let pcHtml = this.pcHtml
@@ -198,6 +222,7 @@ export const editOverseas = {
             this.templateNumber = aInfo[0]
             this.num = aInfo[1]
             this.aPrompt = []
+            this.repeatArr = []
 
             this.activityData.template = []
             this.activityData.items = []
@@ -206,28 +231,44 @@ export const editOverseas = {
 
             if(this.templateKey == '0'){this.aPrompt.push('请选择模板')}
 
+            if(!this.title){this.aPrompt.push('请填写标题')}
+
             if(!this.background){this.aPrompt.push('请填写背景颜色')}
 
             if(!this.banner){this.aPrompt.push('请上传banner')}
 
             this.setAproduct()
 
-            if(this.aPrompt.length>0){
-                let sPrompt = '' 
-                for(let y=0; y<this.aPrompt.length; y++){
-                    sPrompt += (y+1) +'.'+this.aPrompt[y]+'。'+'\n'
+            console.log(this.repeatArr);
+            if(this.aPrompt.length>0 || this.repeatArr.length>0){
+                if(this.aPrompt.length>0){
+                    let sPrompt = '' 
+                    for(let y=0; y<this.aPrompt.length; y++){
+                        sPrompt += (y+1) +'.'+this.aPrompt[y]+'。'+'\n'
+                    }
+                    console.log(sPrompt)
+                    alert(sPrompt)
+                }else if(this.repeatArr.length>0){
+                    this.sPrompt = ((this.repeatArr.length==1)?'这些':'这个') + 'ID' + '重复了：' + '<br/>' + this.repeatArr;
+                    this.popBtnShow = true;
+                    this.popShow = true;
                 }
-                alert(sPrompt)
+                
             }else{
-                setTimeout(() => {
+                this.sPrompt = '数据生成中。。。';
+                this.popBtnShow = false;
+                this.popShow = true;
+                let time_id = setInterval(() => {
                     if(this.aOnOff.join(",").indexOf('0') == -1){
+                        clearInterval(time_id);
+                        
                         let _obj = this.activityData
 
                         console.log(_obj)
 
                        _obj.template.push("app")
                        _obj.template.push("globalPurchase")
-                        _obj.template.push(this.num)
+                       _obj.template.push(this.num)
 
                         let d = new Date()
                         let time = d.getFullYear() + '-' + (d.getMonth()+1) +'-' + d.getDate()
@@ -236,6 +277,12 @@ export const editOverseas = {
                         _obj.background = this.background
                         _obj.banner = this.banner
                         _obj.title = this.title
+                        if(this.typeTab){
+                            _obj.typeTab = this.typeTab;
+                        }
+                        if(this.typeTab2){
+                            _obj.typeTab2 = this.typeTab2;
+                        }
                         _obj.date = time
                         this.headBackground ? _obj.headBackground = this.headBackground : false
 
@@ -272,18 +319,27 @@ export const editOverseas = {
                                 this.$router.push('/overseas')
                             }
                             setList2(param,backFn)
+                            
+                            this.popBtnShow = true;
+                            this.popShow = false;
+
                             this.$emit('updata',true)
+                            
                         })
                     }else{
                         let sPrompt = '' 
                         for(let y=0; y<this.aPrompt.length; y++){
-                            sPrompt += (y+1) +'.'+this.aPrompt[y]+'。'+'\n'
+                            sPrompt += (y+1) +'.'+this.aPrompt[y]+'。<br/>';
                         }
+
                         if(sPrompt){
-                            alert(sPrompt)
+                            clearInterval(time_id);
+                            this.sPrompt = sPrompt;
+                            this.popBtnShow = true;
+                            this.popShow = true;
                         }else{
-                            let cw = this.aOnOff.join("").indexOf('0')+1
-                            alert("请确保第"+cw+"栏的数据的正确")
+                            let cw = this.aOnOff.join("").indexOf('0')+1;
+                            console.log("请确保第"+cw+"栏的数据的正确")
                         }
                     }
                     
@@ -471,7 +527,7 @@ export const editOverseas = {
 
                     this.getComposition(inputProId,inputOdd,aComposition)
 
-                    if(inputProId && this.isRepeat(aProId2)){
+                    if(inputProId && this.isRepeat(aProId2,i)){
                         this.getProduct(inputProId).then(res => {
                             let aInfo = res.info
                             console.log(res)
@@ -481,6 +537,12 @@ export const editOverseas = {
                                         this.getProduct(aProId[num]).then(res => {
                                             if((typeof res).toLowerCase() == 'string'){
                                                 this.aPrompt.push('请检查id：'+aProId[num]+"是否正确！")
+                                                if(this.errorArr[i]){
+                                                    this.errorArr[i].push(aProId[num]);
+                                                }else{
+                                                    this.errorArr[i] = [];
+                                                    this.errorArr[i].push(aProId[num])
+                                                }
                                             }
                                         })
                                     })(z)
@@ -508,6 +570,12 @@ export const editOverseas = {
                                             this.getProduct(aProId[num]).then(res => {
                                                 if((typeof res).toLowerCase() == 'string'){
                                                     this.aPrompt.push('请检查id：'+aProId[num]+"是否正确！")
+                                                    if(this.errorArr[i]){
+                                                        this.errorArr[i].push(aProId[num]);
+                                                    }else{
+                                                        this.errorArr[i] = [];
+                                                        this.errorArr[i].push(aProId[num])
+                                                    }
                                                 }
                                             })
                                         })(z)
@@ -517,11 +585,14 @@ export const editOverseas = {
                         })
                     }else{
                         if(this.repeatArr.length>0){
-                            alert('id：'+ this.repeatArr+ '重复了')
+                            // this.sPrompt = 'id：'+ this.repeatArr+ '重复了';
+                            // this.popBtnShow = true;
+                            // this.popShow = true;
+                            
                         }else{
-                            //alert('请填写商品id')
-                            this.aPrompt.push('请填写商品id')
-                        } 
+                            this.aPrompt.push('请填写商品id');
+                        }
+                        
                     }
 
                     
@@ -605,7 +676,7 @@ export const editOverseas = {
 
                     this._getComposition(inputProId,aComposition)
 
-                    if(inputProId && this.isRepeat(aProId2)){
+                    if(inputProId && this.isRepeat(aProId2,i)){
                         this.getProduct(inputProId).then(res => {
 
                             let aInfo = res.info
@@ -631,7 +702,16 @@ export const editOverseas = {
                                     ((num) =>{
                                         this.getProduct(aProId[num]).then(res => {
                                             if((typeof res).toLowerCase() == 'string'){
-                                                alert('请检查id：'+aProId[num]+"是否正确！");
+
+                                                this.aPrompt.push('请检查id：'+aProId[num]+"是否正确！")
+
+                                                if(this.errorArr[i]){
+                                                    this.errorArr[i].push(aProId[num]);
+                                                }else{
+                                                    this.errorArr[i] = [];
+                                                    this.errorArr[i].push(aProId[num])
+                                                }
+
                                             }
                                         })
                                     })(z)
@@ -640,9 +720,12 @@ export const editOverseas = {
                         })
                     }else{
                         if(this.repeatArr.length>0){
-                            alert('id：'+ this.repeatArr+ '重复了')
+                            // this.sPrompt = 'id：'+ this.repeatArr+ '重复了';
+                            // this.popBtnShow = true;
+                            // this.popShow = true;
+                            
                         }else{
-                            alert('请填写商品id')
+                            this.aPrompt.push('请填写商品id');
                         }
                     }
                 }
@@ -699,7 +782,8 @@ export const editOverseas = {
                    t:Math.random()
                 }
             }).then(res => {
-                return Promise.resolve(res.data)
+                let json = eval("(" + res.data + ")");
+                return Promise.resolve(json);
             })
         },
         upBanner(){
@@ -714,11 +798,16 @@ export const editOverseas = {
                 })  
             }
         },
-        isRepeat(arr){
+        isRepeat(arr,num){
             let nary = arr.sort()
             for (var i = 0; i < arr.length; i++) {
                 if (nary[i] == nary[i + 1]) {
-                    this.repeatArr.push(nary[i])
+                    if(this.repeatArr[num]){
+                        this.repeatArr[num].push(nary[i]);
+                    }else{
+                        this.repeatArr[num] = [];
+                        this.repeatArr[num].push(nary[i])
+                    }
                 }
             }
 
@@ -739,6 +828,78 @@ export const editOverseas = {
                 str+='<option value="'+(i+1)+'">'+this.aTabLi[i]+'</option>'
             }
             this.$refs.tabSelect.innerHTML = this.sOption + str
+        },
+        iKnow(){
+            this.popShow = false;
+            this.popBtnShow = false;
+        },
+        iDelete(){
+            let oWrap = this.$refs.proWrap;
+            let aDiv = oWrap.children;
+
+            if(this.errorArr.length>0){
+                for(let i=0;i<this.errorArr.length;i++){
+                    if(this.errorArr[i]){
+                        let inputProId = aDiv[i].getElementsByClassName("proId")[0].value;
+                        let _value = '';
+                        for(let ii=0;ii<this.errorArr[i].length;ii++){
+                            inputProId = inputProId.replace(new RegExp(this.errorArr[i][ii],'ig'),'');
+                        }
+                        inputProId = this.getStr(inputProId.replace(/\s/ig,',').replace(/no,/ig,'').replace(/,no/ig,''))
+
+
+                        if(inputProId.charAt(0)==','){
+                            inputProId = inputProId.substring(1);
+                        }
+
+                        if(inputProId.indexOf(',,')>0){
+                            let itime = setInterval(()=>{
+                                inputProId = this.getStr(inputProId);
+                                if(inputProId.indexOf(',,')==-1){
+                                    clearInterval(itime)
+                                    aDiv[i].getElementsByClassName("proId")[0].value = inputProId;
+                                }
+                            },200)
+                        }else{
+                            aDiv[i].getElementsByClassName("proId")[0].value = inputProId;
+                        }
+                    }
+                }
+                this.errorArr = [];
+            }else if(this.repeatArr.length>0){
+                for(let i=0;i<this.repeatArr.length;i++){
+                    if(this.repeatArr[i]){
+                        let inputProId = aDiv[i].getElementsByClassName("proId")[0].value;
+                        let _value = '';
+                        for(let ii=0;ii<this.repeatArr[i].length;ii++){
+                            inputProId = inputProId.replace(new RegExp(this.repeatArr[i][ii],'i'),'');
+                        }
+                        inputProId = this.getStr(inputProId.replace(/\s/ig,',').replace(/no,/ig,'').replace(/,no/ig,''))
+
+
+                        if(inputProId.charAt(0)==','){
+                            inputProId = inputProId.substring(1);
+                        }
+
+                        if(inputProId.indexOf(',,')>0){
+                            let itime = setInterval(()=>{
+                                inputProId = this.getStr(inputProId);
+                                if(inputProId.indexOf(',,')==-1){
+                                    clearInterval(itime)
+                                    aDiv[i].getElementsByClassName("proId")[0].value = inputProId;
+                                }
+                            },200)
+                        }else{
+                            aDiv[i].getElementsByClassName("proId")[0].value = inputProId;
+                        }
+                    }
+                }
+                this.repeatArr = [];
+            }
+
+            
+            this.popShow = false;
+            this.popBtnShow = false;
         }
     },
     components:{}

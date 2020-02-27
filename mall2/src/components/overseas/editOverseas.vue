@@ -27,6 +27,8 @@
                     <span>类型：</span>
                     <label>文本<input type="radio" v-model="typeTemplat" value="txt"/></label>
                     <label>图片<input type="radio" v-model="typeTemplat" value="image"/></label>
+                    <label>Tab<input type="checkbox" v-model="typeTab" /></label>
+                    <label>Tab-5<input type="checkbox" v-model="typeTab2" /></label>
                   </li>
                   <li v-if="typeTemplat == 'image'">
                     <span>个数：</span>
@@ -188,6 +190,16 @@
          <input type="button" value="取消" @click="bCancel()" />
        </div>
     </form>
+
+    <div class="bjBox" v-if="popShow"></div>
+    <div class="popBox" v-if="popShow">
+      <div>
+        <p v-html="sPrompt" :class="{'scz':((sPrompt=='数据生成中。。。')?true:false)}"></p>
+        <a href="javascript:;" @click="iKnow()" v-if="popBtnShow">修改</a>
+        <a href="javascript:;" @click="iDelete()" v-if="popBtnShow">删除</a>
+      </div>
+    </div>
+
   </div>
 </template>
 

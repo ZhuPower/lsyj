@@ -3,7 +3,13 @@ export const editTimedReceipt = {
     data(){
         return{
             oJsonAll:{},
-            oJson:{},
+            oJson:{
+                title:'',
+                date:'',
+                type:false,
+                targetUrl:'',
+                successImg:''
+            },
             couponInfo:{
                 couponId:'',
                 startTime:'',
@@ -45,7 +51,6 @@ export const editTimedReceipt = {
                     this.getInfo(this.coupon)
                 }else{
                     this.isNew = true
-                    this.oJson.title =''
                     var d = new Date()
                     var y = d.getFullYear()
                     var m = d.getMonth() +1
@@ -188,7 +193,7 @@ export const editTimedReceipt = {
                 upImage(this).then(res => {
                     if(res.code == 0){
                         //console.log(that.couponInfo.imgSrc)
-                       that.couponInfo.imgSrc.ing =res.name
+                       that.couponInfo.imgSrc.ing = res.name
                     }
                 })  
             }
@@ -201,7 +206,20 @@ export const editTimedReceipt = {
                 upImage(this).then(res => {
                     if(res.code == 0){
                         //console.log(that.couponInfo.imgSrc)
-                        that.couponInfo.imgSrc.end =res.name
+                        that.couponInfo.imgSrc.end = res.name
+                    }
+                })  
+            }
+        },
+        upBanner3(){
+            let oInput = this.$refs.fileBanner
+            let that = this
+            oInput.click()
+            oInput.onchange = function(){
+                upImage(this).then(res => {
+                    if(res.code == 0){
+                        //console.log(that.couponInfo.imgSrc)
+                        that.oJson.successImg = res.name
                     }
                 })  
             }

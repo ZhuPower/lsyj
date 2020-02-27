@@ -20,11 +20,11 @@ export const urlPath = '../'
 export const urlPath2 = '../json/'
 export const urlPath3 = '../../../../html/js/'
 export const urlPath6 = '../../../../html/js/lsMall/'
-export const urlPath4 = 'http://www.yijiago.com/promotion/html/lsMall.html?place='
-export const urlPath5 = 'http://www.yijiago.com/promotion/html/eventDetails.html?activity='
-export const urlPath7 = 'http://www.yijiago.com/promotion/html/storeLink.html?activityName='
-export const urlPath8 = 'http://www.yijiago.com/h5/#/member-help-detail/5855?name='
-export const urlPath9 = 'http://www.yijiago.com/h5/#/member-help-detail/5862?name='
+export const urlPath4 = 'https://www.yijiago.com/promotion/html/lsMall.html?place='
+export const urlPath5 = 'https://www.yijiago.com/promotion/html/eventDetails.html?activity='
+export const urlPath7 = 'https://www.yijiago.com/promotion/html/storeLink.html?activityName='
+export const urlPath8 = 'https://www.yijiago.com/h5/#/member-help-detail/5855?name='
+export const urlPath9 = 'https://www.yijiago.com/h5/#/member-help-detail/5862?name='
 
 
 
@@ -37,7 +37,8 @@ export const oPermission = {
         "fightGroup":true,
         "lsMall":true,
         "eventDetails":true,
-        "upLoad":true
+        "upLoad":true,
+        "upImg":true
     },
     b1:{
         "codeBuilder2":true,
@@ -205,6 +206,7 @@ export function upImage2(obj,oFile){
           "Content-Type": "multipart/form-data",
         }
     }).then((res)=>{
+        obj.value = '';
         return Promise.resolve(res.data)
     })
 }
@@ -217,7 +219,7 @@ export function upImage(obj,oFile){
     
     return axios({
         method:'post',
-        url:'http://www.yijiago.com/index.php/shopadmin?app=image&ctl=admin_manage&act=image_upload&callbackfunc=upImageCallBack',
+        url:'https://www.yijiago.com/index.php/shopadmin?app=image&ctl=admin_manage&act=image_upload&callbackfunc=upImageCallBack',
         data:image,
         headers:{
           "Content-Type": "multipart/form-data",
@@ -232,6 +234,7 @@ export function upImage(obj,oFile){
         }else{
             msg.name = arr[1]
         }
+        obj.value = '';
         return Promise.resolve(msg)
     })
 }

@@ -38,7 +38,12 @@ export const overseas = {
     },
     updated(){
         if(!this.show && this.$route.path == '/overseas'){this.show = true}
-        if(this.upOff){this.getData();this.upOff = false;}
+        if(this.upOff){
+            this.upOff = false;
+            setTimeout(()=>{
+                this.getData();
+            },200)
+        }
     },
     methods: {
         getData() {
