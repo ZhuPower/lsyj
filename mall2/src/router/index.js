@@ -12,6 +12,7 @@ import editMall from '@/components/lsMall/editMall'
 import eventDetails from '@/components/activity/eventDetails'
 import fightGroup from '@/components/fightGroup/fightGroup'
 import upLoad from '@/components/upLoad/upLoad'
+import upImg from '@/components/upImg/upImg'
 import timedReceipt from '@/components/timedReceipt/timedReceipt'
 import editTimedReceipt from '@/components/timedReceipt/editTimedReceipt'
 import overseas from '@/components/overseas/overseas'
@@ -78,6 +79,10 @@ export default new Router({
     {
       path:'/upLoad',
       component: upLoad
+    },
+    {
+      path:'/upImg',
+      component: upImg
     },
     {
       path:'/timedReceipt',
